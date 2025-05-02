@@ -1,0 +1,32 @@
+1.  Snap shot: Toàn bộ mã nguồn , lát cắt thời gian của code. Có thê taoj ra snapshot bất kỳ
++ Snapshot chính là versions: theo dõi, khôi phục, so sánh
+
+2. Commit là việc tạo ra snapshot của code
++ Thay doi so với commit trc
++ Tham chiếu tới commit trc do
++ Một mã băm  dai diện 
+3. Repository
++ Noi chứa tới toàn bộ code của dự n
++ Local repo
++ Remote repo: Kho chứa lưu trên server chung
+
+4. Clone
++ Sao chép remote repo về local
++ Thực hiện 1 lần duy nhất khi mà vào dự an
+
+5. Pull
++ Cập nhật code từ remote về local
+6. Push
++ Đẩy code từ local lên remote, các người khác có thể pull về máy
+
+7. Câu lệnh cơ bản git
++ Clone: Sao chép repo về repo local( Tạo repo local đồng thời)
++ git init: Khởi tạo repo
++ git add: đưa file vào vùng staged
++ git commit: tạo snapshot ghi nhận thay doi
++ git push: đưa các thay đổi code từ repo local lên remote
++ Fetch: Lấy thông tin mới từ remote repo mà không thayddoi local repo
++ Merge: Kết hợp các thay doi tu remote repo hoặc từ nhánh khác vào nhánh hiện tại
+
+8. Lưu trình lam viec voi git của dev:
++ làm trên local -> commit code ( tạo snapshot o local mình) -> pull bản mới nhất tren remote repo về -> push của mình lên remote -> merge.. nếu cần
