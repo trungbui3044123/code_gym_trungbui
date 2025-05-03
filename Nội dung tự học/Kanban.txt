@@ -2,3 +2,52 @@
 ２．対象の仕事を分析して、必要な手順を洗い出し、細かいタスを作り、優先順位付け、タスク分類、当てはまる
 ３．看板運用；常に内容を更新する。
 ４．改善：毎日何を改善するのか？　やり方、考え方を改善するのです。
+
+----------------------------------
+1. Cấu trúc dữ liệu phù hợp với tình huống thông dụng
+2. Xây dựng 1 website, mô hình spring mvc, các thư viện java
+3. Sử dụng các tools git, các quản lý DB
+
+1. Module 1
++ Git
++ Flowchart và Pseudo code
++ Html, js
++ Kiến thức cơ bản: data type, biến, vòng lặp, functions, object class...
++ Cấu trúc dữ liệu
++ Áp dụng Kanban follow công việc
++ Scrum
+
+--> Tạo kanabn để follow công việc này
+
+
+Mục tiêu, ko phải nhớ hết
+Mục tiêu là hiểu hết các cái ở module này, khi nào cần thì biết cách tra lại để sử dụng
+Kế hoạch sử dụng là gì: Tạo 1 web cho riêng bản thân mình. Các cái mày làm sau này sẽ ghép nối vào dự án đó
++ Trước khi học thì nên làm rõ mày cần hiểu cái gì ở nội dung này
++ Mày sử dụng nó vào dự án cá nhân ntn
++ Sử dụng vào demo cho dự án cá nhân
++ Cải tiến , hiểu sai... note lại để hiểu hơn
++ Define of done: Sử dụng được thực tế kiến thức đó, nói tới là hiểu và biết cần làm gì với bài toán có liên quan
+
+-> Kanban
++ Breaks hết ra các nội dung học theo mục lục
++ Mục đích học, áp dụng thực tế , áp dụng vào dự án cá nhân...
++ Độ ưu tiên(theo mục tiêu)
++ Đặt QA: Đặt trước QA cho từng nội dung
++ Từng mục: ghi chép theo template
++ Áp dụng thực tế, tạo 1 demo trước cho dự án với phần đó. Demo phải đảm bảo sau này áp dụng được
++ Cải tiến, hiểu sai note lại vào ghi chép
++ Trả lời QA, đánh giá lại tính áp dụng thực tế của nội dung đã học
++ DONE
+
+-> Break tasks. Form cơ bản cho break tasks:
++ Overview về phần học:
+1. Làm rõ output sau học: Mục tiêu cần hieru được cái gì, cần áp dụng làm việc cụ thể gì
+2. Tổng hợp các tasks trong phần học +  Đánh độ ưu tiên(theo mục tiêu) + Bỏ các cái thấy ko cần
+3. Đặt QA cho overview phần học
++ Details từng tasks học:
+1. Overview tasks học: Vị trí là gì ở học phần, đặt QA hoặc đánh giá học,ko học
+2. Ghi chép nội dung theo template
+3. Áp dụng thực tế tasks học, hoặc đánh pending đợi áp dụng cùng tasks cụ thể nào
+4. Trả lời QA, cải tiến, bổ sung...
+5. Define done tasks học
