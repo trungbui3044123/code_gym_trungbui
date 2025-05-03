@@ -30,3 +30,9 @@
 
 8. Lưu trình lam viec voi git của dev:
 + làm trên local -> commit code ( tạo snapshot o local mình) -> pull bản mới nhất tren remote repo về -> push của mình lên remote -> merge.. nếu cần
+
+9. Lần dau connect voi GitHub( remote repo)
++ Tren GitHub tạo 1 repo mới. LấyURL repo do
++ Local thực hiện 2 việc: Connect với remote và gán là origin 
++ Và tạo upstream branch: git push --set-upstream origin master
++ Từ sau trở đi chỉ cần push dc: git add > git commit > git push origin
