@@ -8,10 +8,10 @@
   
   /* Style the header */
   .header {
-    background-color: #f1f1f1;
-    padding: 20px;
+    background-color: #878e84;
+    padding: 10px;
     text-align: center;
-    font-size: 25px;
+    font-size: 15px;
 
   }
   
@@ -28,14 +28,16 @@
   }
   
   /* Left and right column */
-  .column.side {
+  .info {
      -webkit-flex: 1;
      -ms-flex: 1;
      flex: 1;
+     background-color: #2c8008;
+     text-align: center;    
   }
   
   /* Middle column */
-  .column.middle {
+  .social-links {
     -webkit-flex: 2;
     -ms-flex: 2;
     flex: 2;
