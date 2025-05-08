@@ -24,7 +24,8 @@
   /* Create three unequal columns that sits next to each other */
   .column {
     padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
+    height: 200px; /* Should be removed. Only for demonstration */
+    width: 33%;
   }
   
   /* Left and right column */
