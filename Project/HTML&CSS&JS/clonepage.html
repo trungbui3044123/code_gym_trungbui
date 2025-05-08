@@ -47,7 +47,7 @@
         <div class="form">
             <form action="" method="post">
                 <label for="itemname">Tên sản phẩm:</label>
-                <input type="text" id="itemname" required placeholder="Tên sản phẩm"><br>
+                <input type="text" id="itemname" name="itemname" required placeholder="Tên sản phẩm"><br>
                 <label for="itemprice">Giá sản phẩm:</label>
                 <input type="text" id="itemprice" required placeholder="20,300"><br>
                 <label for="amount">Số lượng:</label>
@@ -65,7 +65,7 @@
                 </select><br>
                 <label for="buydate">Ngày mua:</label>
                 <input type="date" id="buydate" required max="2100-01-01" min="2024-09-20"><br> 
-                <input type="submit" value="Submit">           
+                <input type="submit" value="Submit" onclick="validateForm()">           
             </form>
         </div>
     </article>
@@ -74,6 +74,8 @@
         
             Design: <a rel="nofollow" href="https://www.w3schools.com/html/default.asp" target="_blank">TemplateMo</a></p>
     </footer>
+  <!-- Scripts -->
+  <script src="/Project/HTML&CSS&JS/resource/clonepagejs.js"></script>
 </body>
 
 </html>
