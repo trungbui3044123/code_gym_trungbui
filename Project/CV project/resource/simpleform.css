@@ -1,0 +1,48 @@
+html* {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+}
+
+.body h2 {
+    text-align: center;
+    background-color: aliceblue;
+}
+table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+.table1 td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.table2 td, th {
+    padding: 20px;
+    border: 1px solid black;
+}
+.table2 th{
+    font-family: 'Patua One', cursive;
+    font-size:16px;
+    font-weight:400;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+    background-color: #d61b06;
+    border-color: white;
+}
+.table2 td{
+    font-family: 'Open Sans', sans-serif;
+    font-weight:400;
+    color:#5f6062;
+    font-size:13px;
+    padding:20px 20px 20px 20px;
+    border-bottom:1px solid #e0e0e0;
+    text-align: center;
+}
+
+ .hover {
+    background: red;
+}
