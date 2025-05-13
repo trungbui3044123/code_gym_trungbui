@@ -16,9 +16,7 @@ table{
     text-align: left;
     padding: 8px;
 }
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
+
 .table2 td, th {
     padding: 20px;
     border: 1px solid black;

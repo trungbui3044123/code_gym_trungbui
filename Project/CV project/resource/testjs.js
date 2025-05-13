@@ -23,4 +23,35 @@ function testme4() {
 
 
 }
+function testme5() {
+    // Lấy data từ input
+    var date= document.forms["form3"]["date"].value;
+    var morningact= document.forms["form3"]["morningact"].value;
+    var noonact= document.forms["form3"]["noonact"].value;
+    
+    // Tạo thẻ table
+    var table =  document.getElementById("table2");
 
+    // Tạo 1 dòng (tr)
+    var row = document.createElement("tr");
+
+    // Tạo 2 ô (td)
+    var cell1 = document.createElement("td");
+    cell1.innerHTML = date;
+    var cell2 = document.createElement("td");
+    cell2.innerHTML = morningact;
+    var cell3 = document.createElement("td");
+    cell3.innerHTML = noonact;
+
+    // Thêm ô vào dòng
+    row.appendChild(cell1);
+    row.appendChild(cell2);
+    row.appendChild(cell3);
+
+    // Thêm dòng vào bảng
+    table.appendChild(row);
+
+
+}
+
+// Tạo 1 table input các data, rồi submit thì in nó ra 1 file txt
