@@ -21,7 +21,7 @@
                 <h2>Order form</h2>
             </div>
             <div class="formcontent">
-                <form action="/Profile.html" method="get">
+                <form action="Profile.html" method="post" name="formtop" onsubmit="return formtopValidate()" >
                     <p>What would you like to buy?</p>
                     <select>
                         <option value="  ">A</option>
@@ -29,28 +29,29 @@
                         <option>C (+ 0.5$)</option>
                     </select>
                     <p>How many would you like to order?</p>
-                    <input type="radio" name="rd" /> 1 - $10 <br />
-                    <input type="radio" name="rd" /> 2 - $20 <br />
-                    <input type="radio" name="rd" /> 3 - $25 <br />
+                    <input type="radio" name="rd" > 1 - $10 <br >
+                    <input type="radio" name="rd" > 2 - $20 <br >
+                    <input type="radio" name="rd" > 3 - $25 <br >
                     <p>Name <span style="color: red">*</span> </p>
-                    <input type="text" name="firstname" placeholder="FirstName" size="15" />
-                    <input type="text" name="lastname" placeholder="LastName" size="15" />
+                    <input type="text" name="firstname" placeholder="FirstName" size="15" >
+                    <input type="text" name="lastname" placeholder="LastName" size="15" >
                     <p>Email</p>
-                    <input type="text" name="email" size="35" />
+                    <input type="text" name="email" size="35" >
                     <p>Phone Number</p>
-                    <input type="text" name="phone1" size="5" /> -
-                    <input type="text" name="phone2" size="5" /> -
-                    <input type="text" name="phone3" size="5" />
-                    <p><input type="submit" name="btSubmit" value="Submit" /></p>
-                </form>
+                    <input type="text" name="phone1" size="5" > -
+                    <input type="text" name="phone2" size="5" > -
+                    <input type="text" name="phone3" size="5" >
+                    <p><input type="submit" name="btSubmit" value="Submit"></p>
+                </form> 
             </div>
-
+            <script src="resource/formvalidate.js">              
+            </script>
         </section>
         <section class="Google searchfrom">
             <div class="formheader">
                 <h2>Google search from</h2>
             </div>
-            <form action="https://www.google.com.vn/search">
+            <form action="https://www.google.com.vn/search" method="post">
                 <input type="text" name="q" />
                 <input type="submit" value="Tìm kiếm" />
             </form>
