@@ -1,0 +1,248 @@
+Data type: 
++ Mỗi loại data sẽ có 1 chức năng đặc thù, từ đó có những method có sẵn của ngôn ngữ để xử lý đặc thù đó. Vấn đề là chọn type nào để tối ưu với requirement và dùng dcd tốt nhất đặc thù của nó.
++ Tưởng tượng mỗi data type là 1 tướng trong game. Tướng đó có sức mạnh gì, function là gì(method) để mình đánh quái
+Btvn: List ra toàn bộ data type và function chính của nó. Các loại tướng chính:
+String
+Number
+Bigint
+Boolean
+Undefined
+Null
+Symbol
+Object: objects, arrays, dates, maps, sets, intarrays, floatarrays, promises, and more.
+
+
+
+-------------------------- Tướng String --------------------------
++ Là nơi lưu trữ dữ liệu văn bản(text). Tên,đchi,câu thông báo.. String phải đặt trong dấu "" hoặc ' '
++ The backslash escape character (\) turns special characters into string characters: \"= "
++ Six other escape sequences are valid in JavaScript: \b	Backspace, \f	Form Feed, \n	New Line, \r	Carriage Return,...
+Một số chức năng chính method: Thao tác với chuỗi &  Search chuỗi
++ length(), toUpperCase() & toLowerCase() – Chuyển đổi chữ hoa/thường, trim() – Loại bỏ khoảng trắng ở đầu và cuối chuỗi
++ slice(start, end) – Cắt chuỗi theo vị trí. console.log(str.slice(0, 5)); // "Hello"
++ replace(searchValue, newValue) – Thay thế một phần của chuỗi
++ split(separator) – Tách chuỗi thành mảng
++ includes(substring) – Kiểm tra xem chuỗi có chứa một từ cụ thể không
++ indexOf(substring) & lastIndexOf(substring) – Tìm vị trí của chuỗi con: console.log(str.indexOf("o")); // 4
++ startsWith(substring) & endsWith(substring) – Kiểm tra chuỗi có bắt đầu/kết thúc bằng một từ cụ thể không :console.log(str.endsWith("!")); // true
++ concat() joins two or more strings:
++ .values() : trả lại iterator.
+--> Tóm lại tại sao dùng tướng String  <--
+- Trong JavaScript, chuỗi (String) thuộc kiểu dữ liệu primitive (nguyên thủy), có nghĩa là chúng không phải là object (đối tượng) như mảng hay đối tượng Object. Một đặc điểm quan trọng của String là immutable (bất biến), tức là mọi thao tác trên chuỗi sẽ không thay đổi chuỗi gốc, mà tạo ra một chuỗi mới.
++ Nếu bạn muốn giữ giá trị mới của chuỗi sau khi thay đổi, phải gán nó vào biến mới.Ví dụ, nếu chỉ gọi str.toUpperCase(); mà không gán, giá trị ban đầu của str vẫn không thay đổi.
++ Ví dụ, nếu bạn cố gắng chỉnh sửa str[0] = "J";, nó sẽ không thay đổi vì String là immutable.
+- Mỗi khi thay đổi chuỗi, JavaScript phải tạo một chuỗi mới, dẫn đến sử dụng thêm bộ nhớ. Nếu cần thay đổi nhiều, có thể dùng array hoặc StringBuilder (trong các ngôn ngữ khác như Java). Ghi nhớ: Nếu muốn thay đổi nội dung chuỗi nhiều lần, hãy dùng Array hoặc các phương pháp khác để tối ưu!
+- Template String : `` --> khai báo kiểu này thay cho ngoặc đơn/kép thì sẽ dùng được biến ${} trong string.
+
+-------------------------- Tướng Number --------------------------
++ By default, JavaScript displays numbers as base 10 decimals.
++ BigInt variables are used to store big integer values that are too big to be represented by a normal JavaScript Number.
+
+Một số chức năng chính method: Thao tác với number:
++ toFixed() returns a string, with the number written with a specified number of decimals: let x = 9.656; x.toFixed(0)//10;
+x.toFixed(2)//9.7;
++ Converting Variables to Numbers: Number(), parseFloat(), parseInt()
+
+Có tận **3 phương thức** để chuyển đổi một biến thành số trong JavaScript vì mỗi phương thức có **mục đích riêng biệt**. Dưới đây là sự khác nhau giữa chúng và lý do cần biết:
+
+### 🔹 **Khác biệt giữa 3 phương thức**
+| **Phương thức**   | **Cách hoạt động** | **Kết quả** |
+|-------------------|-----------------|-------------|
+| `Number(value)`  | Chuyển đổi giá trị thành số (cả số nguyên và số thực) | `Number("10.5") → 10.5` |
+| `parseFloat(value)` | Chuyển đổi giá trị thành số thực (có dấu chấm thập phân) | `parseFloat("10.5px") → 10.5` |
+| `parseInt(value)` | Chuyển đổi thành số nguyên (bỏ phần thập phân) | `parseInt("10.5px") → 10` |
+
+---
+
+### 🔹 **Tại sao lại cần biết?**
+1. **Tránh lỗi khi chuyển đổi dữ liệu**
+   - Khi làm việc với dữ liệu nhập từ người dùng hoặc API, chúng thường ở dạng **chuỗi** (`string`). Nếu bạn không chuyển đổi đúng cách, có thể gặp lỗi hoặc kết quả không mong muốn.
+
+2. **Chọn phương thức phù hợp với từng trường hợp**
+   - **Dùng `Number(value)`** khi chắc chắn giá trị đầu vào là một số hợp lệ (không có ký tự lạ).
+   - **Dùng `parseFloat(value)`** khi muốn lấy số thực từ chuỗi có chứa văn bản, chẳng hạn `"10.5px"`.
+   - **Dùng `parseInt(value)`** khi chỉ cần số nguyên và bỏ phần thập phân.
+
+3. **Làm việc với các giá trị đặc biệt**
+   - Nếu chuyển đổi `"abc"` bằng `Number("abc")`, kết quả là `NaN` (Not a Number).
+   - Nếu dùng `parseInt("123abc")`, nó sẽ trả về `123` vì chỉ lấy phần số đầu tiên.
+---
+💡 **Mẹo:** Nếu không chắc dữ liệu đầu vào, bạn có thể dùng `isNaN()` để kiểm tra trước khi chuyển đổi!
+function convertToNumber(value) {
+    if (isNaN(value)) {
+        return "Giá trị không hợp lệ!";
+    }
+    return Number(value);
+}
+
+
+-------------------------- Tướng Array --------------------------
++ Array là 1 biến có thể lưu được nhiều value. Khi mà có 1 list items thì dùng cái này. 
++  Khai báo [] . Khai báo biến array với const. Vì array là list và thường ko đổi.
++ Tiếp cận các thành phần trong array:  dùng index [], 
++ Array Elements Can Be Objects. Arrays are special kinds of objects.
++ Có thể khai báo các items trong array với loại khác nhau như: myArray[0] = Date.now; myArray[1] = myFunction; myArray[2] = myCars;
+
+Một số chức năng chính method: Thao tác với array &  Search array:
++ .length(): The length property is always one more than the highest array index.
++ Khi thêm 1 element mới cho array dùng: .push()
++ Nếu khai báo cặp key/values thì JS sẽ tự động biến array sang object. Và method sử dụng cho array có thể ko còn đúng nữa: 
+const person = [];
+person["firstName"] = "John";
+person["lastName"] = "Doe";
+person["age"] = 46;
+person.length;     // Will return 0
+person[0];         // Will return undefined
+
++ push() - Thêm phần tử vào cuối mảng
++ pop() - Xóa phần tử cuối cùng
++ shift() - Xóa phần tử đầu tiên
++ unshift() - Thêm phần tử vào đầu mảng
++ splice(start, deleteCount, item1, item2, ...) - Thêm/Xóa/Thay thế phần tử
++ slice(start, end) - Cắt một phần của mảng
++ indexOf(item) - Tìm vị trí của phần tử
++ includes(item) - Kiểm tra phần tử có tồn tại
++ join(separator) - Chuyển mảng thành chuỗi
++ reverse() - Đảo ngược thứ tự mảng
++  toString() converts an array to a string of (comma separated) array values.
++ The sort() method sorts an array alphabetically: Banana,Orange,Apple,Mango -> Apple,Banana,Mango,Orange
++ Array Iteration là quá trình duyệt qua từng phần tử của mảng để thực hiện một thao tác nào đó, như in ra màn hình, tính toán, hoặc thay đổi dữ liệu.Không cần dùng vòng lặp for, chỉ cần gọi method trực tiếp. ✔ Hiệu suất tốt hơn: Các method như map(), filter(), reduce() được tối ưu cho xử lý mảng. ✔ Lập trình theo phong cách "Functional Programming": Giúp code linh hoạt và dễ bảo trì.
+++ forEach() – Duyệt qua từng phần tử và thực hiện hành động
+++ filter() – Lọc phần tử thỏa điều kiện
+--> Khi nào dùng tướng Array <--
+✅ Dùng khi: Dữ liệu có thứ tự rõ ràng.Cần truy cập nhanh bằng index (students[2]).Muốn sử dụng các phương thức của mảng (push(), map(), filter()…).
+Dùng khi…                                Array	Object
+Truy cập theo thứ tự số (index)	          ✅	   ❌
+Truy cập theo tên thuộc tính (chuỗi)	    ❌	   ✅
+Danh sách có thứ tự (học sinh, sản phẩm…)	✅	   ❌
+Thông tin của một thực thể (người, sách…)	❌	   ✅
++ The Difference Between Arrays and Objects: In JavaScript, arrays use numbered indexes.  In JavaScript, objects use named indexes.
+
+-----------------------------------------------------------------------------
+### 🔹 **Tại sao cần chia Set, Map, Object thành 3 loại khác nhau?**  
+JavaScript cung cấp **Set, Map và Object** vì mỗi loại có **cách lưu trữ và truy xuất dữ liệu khác nhau**, phục vụ từng mục đích cụ thể.  
+
+| **Loại** | **Dùng để lưu trữ** | **Cách truy xuất dữ liệu** | **Có thứ tự không?** | **Đặc điểm chính** |
+|----------|----------------|-------------------|-----------------|-------------------|
+| **Object** | Cặp **key-value**, key là chuỗi hoặc ký hiệu (`Symbol`) | Truy cập bằng key (`obj.key` hoặc `obj["key"]`) | ❌ Không có thứ tự rõ ràng | Dùng phổ biến để lưu thông tin theo từng thuộc tính |
+| **Map** | Cặp **key-value**, key có thể là **bất kỳ kiểu dữ liệu** | Truy cập bằng `map.get(key)` | ✅ Có thứ tự theo lúc thêm phần tử | Thích hợp cho các cấu trúc dữ liệu phức tạp cần key linh hoạt |
+| **Set** | Dữ liệu **duy nhất**, không bị trùng lặp | Kiểm tra bằng `set.has(value)` | ✅ Có thứ tự theo lúc thêm phần tử | Tốt để lưu danh sách các giá trị không trùng |
+
+---
+
+### 🔹 **Đặc điểm từng loại**  
+
+1️⃣ **Object** (Đối tượng)  
+- Chỉ dùng **chuỗi** (`string`) hoặc `Symbol` làm key.  
+- Không có thứ tự cố định.  
+- Thường dùng để lưu thông tin dạng **key-value** của một thực thể.  
+```js
+let person = { name: "Alice", age: 25 };
+console.log(person.name); // Alice
+```
+
+2️⃣ **Map**  
+- **Key có thể là bất kỳ kiểu dữ liệu**: số, chuỗi, object, boolean,…  
+- Có thứ tự theo lúc thêm vào.  
+- Tốt hơn `Object` khi cần quản lý nhiều loại key khác nhau.  
+```js
+let userRoles = new Map();
+userRoles.set("Alice", "Admin");
+userRoles.set(123, "Member");
+console.log(userRoles.get(123)); // Member
+```
+
+3️⃣ **Set**  
+- **Chỉ lưu các giá trị duy nhất**, không lặp lại.  
+- Có thứ tự theo lúc thêm vào.  
+- Rất hữu ích khi cần lọc bỏ phần tử trùng lặp.  
+```js
+let uniqueNumbers = new Set([1, 2, 3, 2, 1]);
+console.log(uniqueNumbers); // Set(3) {1, 2, 3}
+```
+
+---
+
+### 🔹 **Method đặc trưng của từng loại**  
+
+| **Loại**  | **Method quan trọng** | **Mô tả** |
+|-----------|-----------------|----------|
+| **Object**  | `Object.keys(obj)` | Trả về danh sách key của object |
+|   | `Object.values(obj)` | Trả về danh sách giá trị của object |
+| **Map**  | `map.set(key, value)` | Thêm phần tử vào Map |
+|   | `map.get(key)` | Lấy giá trị theo key |
+|   | `map.has(key)` | Kiểm tra key có tồn tại |
+|   | `map.delete(key)` | Xóa phần tử theo key |
+| **Set**  | `set.add(value)` | Thêm phần tử vào Set |
+|   | `set.has(value)` | Kiểm tra phần tử có tồn tại |
+|   | `set.delete(value)` | Xóa phần tử khỏi Set |
+
+---
+
+### 🔹 **Khi nào sử dụng từng loại?**  
+✔ **Dùng `Object`** khi lưu thông tin thuộc tính của một thực thể (VD: thông tin user).  
+✔ **Dùng `Map`** khi cần lưu key-value có thứ tự và key linh hoạt.  
+✔ **Dùng `Set`** khi cần lưu danh sách không trùng lặp (VD: danh sách ID duy nhất).  
+
+💡 **Mẹo:** Nếu bạn **không chắc dùng Object hay Map**, hãy dùng `Map` vì nó có hiệu suất tốt hơn khi làm việc với nhiều key! 🚀  
+Bạn muốn tìm hiểu sâu hơn về loại nào không? 😃
+
+------------------------------ JS ERROR------------------------
+1.
+JavaScript try and catch
+The try statement allows you to define a block of code to be tested for errors while it is being executed.
+
+The catch statement allows you to define a block of code to be executed, if an error occurs in the try block.
+
+The JavaScript statements try and catch come in pairs:
+try {
+  Block of code to try
+}
+catch(err) {
+  Block of code to handle errors
+}
+--> err là 1 object. có thể gọi err.name để xem tên lỗi. hoặc err.message show nội dung mess lỗi
+
+2. 
+The throw Statement
+The throw statement allows you to create a custom error.
+
+Technically you can throw an exception (throw an error).
+
+The exception can be a JavaScript String, a Number, a Boolean or an Object:
+
+3.
+The finally Statement
+The finally statement lets you execute code, after try and catch, regardless of the result:
+try {
+  Block of code to try
+}
+catch(err) {
+  Block of code to handle errors
+}
+finally {
+  Block of code to be executed regardless of the try / catch result
+}
+
+---------------Hoisting--------------------------
++ Hoisting is JavaScript's default behavior of moving declarations to the top.Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope (to the top of the current script or the current function).
++ Các biến let và const được hoisted (đưa lên đầu phạm vi khối block) nhưng không được khởi tạo ngay lập tức. Điều này tạo ra "temporal dead zone" (TDZ) – vùng mà biến tồn tại nhưng chưa thể sử dụng cho đến khi được khai báo.
+console.log(x); // ❌ ReferenceError: Cannot access 'x' before initialization
+let x = 10;     // Khai báo biến sau khi bị lỗi
+console.log(x); // ✅ 10 (Bây giờ biến x có giá trị)
++ Nếu dùng var, sẽ không bị lỗi vì var được khởi tạo với undefined ngay từ đầu:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
