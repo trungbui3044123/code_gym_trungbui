@@ -90,12 +90,15 @@ table {
 }
 
 th, td {
-  text-align: left;
+  text-align: center;
   padding: 8px;
 }
 th {
   background-color: #04AA6D;
   color: white;
+}
+td {
+  color: black;
 }
 
 /* summary css */

@@ -110,3 +110,8 @@ public class SaveTableServlet extends HttpServlet {
 ---
 
 Bạn dùng **Servlet hay Spring Boot**? Mình có thể viết đúng version cho bạn nếu biết thêm chi tiết.
+
+
+laasy data tu input
+tao 1 row
+tao td
