@@ -4,7 +4,7 @@ function getAPI() {
   let year = time.getFullYear(); console.log(year);
   let month = time.getMonth() + 1; console.log(month);
   let date = time.getDate(); console.log(date);
-  
+
   document.getElementById("today").innerHTML = `Today: ${year}-${month}-${date}`;
 
   const url = `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@2025-05-20/v1/currencies/jpy.json`;
@@ -23,3 +23,15 @@ function getAPI() {
   xhttp.open("GET", url, true);
   xhttp.send();
 }
+
+
+let list = [];
+fetch('https://pokeapi.co/api/v2/pokemon/', { method: "GET" })
+  .then(resp => resp.json())
+  .then(data => {
+    // localStorage.setItem("results", Value cuar result dang json)    
+    const pokemonlist = data.results;// array list pokemon 0-22
+    const pokemonlistvalue = JSON.stringify(pokemonlist); // to json to store in brrowser
+    localStorage.setItem("pokemonlist", pokemonlistvalue) // store data item in name and a value 
+
+  });
