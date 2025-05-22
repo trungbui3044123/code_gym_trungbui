@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>users</title>
+    <script src="/resource/users/users.js"></script>
+
+</head>
+
+<body>
+    <article class="body">
+        <div class="pagehead">
+            <h1> Get ussers page</h1>
+        </div>
+        <div class="pagebody">
+            <div id="tablehead">
+                <p id="info"></p>
+            </div>
+            <table id="table">
+                <tr>
+                    <th>name</th>
+                    <th>username</th>
+                    <th>email</th>
+                    <th>address</th>
+                    <th>phone</th>
+                    <th>website</th>
+                    <th>company</th>
+                </tr>
+            </table>
+        </div>
+
+    </article>
+    <script>
+        // get data
+        const rawdata = JSON.parse((localStorage.getItem("rawdata"))); // doi lai no thanh array
+        console.log(rawdata);
+
+        let table = document.getElementById("table");
+
+        const name = [];
+        const username = [];
+        const email = [];
+        const address = [];
+        const phone = [];
+        const website = [];
+        const company = [];
+        rawdata.forEach(User => { // user la object
+            //Object.values(User) la 1 mang co 10 phan tu. la cac value cua object
+            name.push(Object.values(User)[1]+"\n\n");
+            username.push(Object.values(User)[2]+"\n\n");
+            email.push(Object.values(User)[3]+"\n\n");
+            address.push(Object.values(User)[4]+"\n\n");
+            phone.push(Object.values(User)[5]+"\n\n");
+            website.push(Object.values(User)[6]+"\n\n");
+            company.push(Object.values(User)[7]+"\n\n");
+
+
+        });
+        const row = document.createElement("tr");
+        let list_name = document.createElement("td");
+        list_name.innerText = name;
+        row.appendChild(list_name);
+
+        let list_username = document.createElement("td");
+        list_username.innerText = username;
+        row.appendChild(list_username);
+        
+        let list_email = document.createElement("td");
+        list_email.innerText = email;
+        row.appendChild(list_email);
+        
+        let list_address = document.createElement("td");
+        list_address.innerText = address;
+        row.appendChild(list_address);
+        
+        let list_phone = document.createElement("td");
+        list_phone.innerText = phone;
+        row.appendChild(list_phone);
+       
+        let list_website = document.createElement("td");
+        list_website.innerText = website;
+        row.appendChild(list_website);
+        
+        let list_company = document.createElement("td");
+        list_company.innerText = company;
+        row.appendChild(list_company);
+
+        table.appendChild(row);
+
+        console.log((Object.values(rawdata[0].address))[0])
+
+    </script>
+
+    <style>
+        .body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #info {
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>
