@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Pokemon project</title>
+	<script>
+		const endpoint = ["pokemon-species", "contest-effect", "encounter-method", "evolution-chain", "item", "contest-type"];
+		const amount = [10, 20, 30, 40, 50, 60, 100, 200, 300];
+		fetch(`https://pokeapi.co/api/v2/${endpoint[0]}/?limit=${amount[3]}`, { method: "GET" })
+			.then(resp => {
+				if (resp.ok) {
+					return resp.json()
+				} else {
+					throw new Error("Xem lai api pokemon")
+				}
+			})
+			.then(data => {
+				localStorage.setItem("rawdata", JSON.stringify(data)) //rawdata sang json de luu vao browser
+			})
+			.catch(err => alert(err))
+
+	</script>
+	<link rel="stylesheet" href="static/home.css">
+</head>
+
+<body>
+<header>
+	
+	<div class="head">
+		<h1> Mục tiêu dự án</h1>
+	</div>
+	<div class="subhead">
+		<ul>
+			<li>
+				IN ra list pokemon
+			</li>
+			<li>
+				User add pokemon vào table bên dưới
+			</li>
+			<li>
+				Gửi nội dung table đó đi và lưu vào java object
+			</li>
+			<li>
+				Trả api list object từ java và in ra ở file html khác
+			</li>
+		</ul>
+	</div>
+</header>
+<article>
+	<section>
+	<div class="btn1">
+		<button id="btn1" onclick=" getpokemon()">Get pokemon</button>
+	</div>
+	<div class="listzone table">
+		<form action="/pokemon/home" method="post" name="form">
+		<table id="tablelist">
+			<tr>
+				<th>Pokemon name</th>
+				<th>Pokemon detail</th>
+			</tr>
+		</table>
+		</form>
+	</div>
+	</section>
+
+<section>	
+	<div class="btn2">
+		<input type="submit" value="Send to server" form="form" onclick="Collecttabledata()">
+		<input type="hidden" name="serverdata" id="serverdata"  form="form">
+		
+	</div>
+	<div class="getpokemonzone table">
+
+	</div>
+</section>
+</article>
+<script src="static/getpokemon.js"></script>	
+</body>
+
+</html>
