@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        fetch("/resource/users/user.json")
+            .then(resp => resp.json())
+            .then(data => {
+                localStorage.setItem("local", JSON.stringify(data))
+
+            })
+    </script>
+</head>
+
+<body>
+    <div>
+        <table id="bai1">
+            <tr>
+                <th>username</th>
+                <th>email</th>
+                <th>firstName</th>
+                <th>power</th>
+                <th>gender</th>
+                <th>avata</th>
+            </tr>
+        </table>
+    </div>
+    <div id="bai2">
+        <p>Toong suc manh <span id="totalpower"></span></p><br>
+    </div>
+    <div id="bai3">
+        <input type="text" id="name"><br>
+        <input type="text" id="power"><br>
+        <button id="btnA" onclick="return searchpokemon()">Add</button><br>
+        <p id="result3"></p><br>
+    </div>
+    <div id="bai4">
+        <p>Tìm số </p><br>
+        <input type="number" id="input">
+        <button id="btn" onclick="return nhapso()">Search</button>
+        <p id="result"></p>
+    </div>
+    <div id="bai5">
+        <p>Thêm/sửa/xóa </p><br>
+        <input type="number" id="add">
+        <button id="btnA" onclick="return add1()">Add</button><br>
+
+        <button id="btnD" onclick="return delete12()">Delete</button><br>
+        <input type="number" id="edit">
+        <button id="btnE" onclick="return edit()">Edit</button><br>
+
+        <p id="add123"></p>
+        <p id="delete123"></p>
+        <p id="edit"></p>
+    </div>
+
+    <script>
+        const parsed_data = JSON.parse(localStorage.getItem("local"));
+        const table = document.getElementById("bai1");
+       
+       let array1=  parsed_data.filter(pokemon => pokemon.power >30);
+       let array2= {name:"12f","ưoeirwower":1} ;
+       let array3= Array.of(1,"trungbui",parsed_data,parsed_data.forEach(element => 
+        element.power));
+       console.log(array1);
+       console.log(parsed_data.at(-1));
+
+
+       let array = [1, 2, 3, 4, 5, 6, 7];
+       let array4 = array.copyWithin(0, 4);
+
+console.log(array);
+console.log(arra4);
+
+    </script>
+
+
+</body>
+
+</html>

@@ -4,108 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>users</title>
-    <script src="/resource/users/users.js"></script>
+    <title>Get users from jsonfile</title>
+    <script>
+        const file = "/resource/users.json";
+        fetch(file)
+            .then(resp => resp.json())// doi sang object
+            .then(data => {
+                const table = document.getElementById("table"); // data la object voi key la index va value la object users. Muon su dung thi phai loop qua 
+                const name = [];
+                data.forEach((user,index )=> {  // row co index va 1 object user
+                    const row = document.createElement("tr");
+                    let cell1 = document.createElement("td");
+                    let cell2 = document.createElement("td");
+                    cell1.innerHTML =index;
+                    cell2.innerHTML = user.name;
+                    row.appendChild(cell1);
+                    row.appendChild(cell2);
+                    table.appendChild(row);
+                    name.push(user.name)
+                });
 
+                localStorage.setItem("userlist", JSON.stringify(name))
+
+
+            }
+            )
+    </script>
 </head>
 
 <body>
-    <article class="body">
-        <div class="pagehead">
-            <h1> Get ussers page</h1>
-        </div>
-        <div class="pagebody">
-            <div id="tablehead">
-                <p id="info"></p>
-            </div>
+    <h1> List of users</h1>
+    <article>
+        <div>
+            <input type="text" name="name" id="name">
+            <button id="searchbtn" onclick="return  searchname()"> Search name</button>
+            <h2 id="result"></h2>
             <table id="table">
                 <tr>
+                    <th>ID</th>
                     <th>name</th>
-                    <th>username</th>
-                    <th>email</th>
-                    <th>address</th>
-                    <th>phone</th>
-                    <th>website</th>
-                    <th>company</th>
                 </tr>
             </table>
         </div>
+        <p> JS được sinh ra là để làm việc với browser, do đó các công việc với file ở local sẽ không được support nhiều. 
+            Lúc này là lúc cần áp dụng các ngôn ngữ khác. nếu muốn lưu data vào file ở local. lưu vào 1 app khác ở local như app quản lý DB.
 
+        </p>
     </article>
     <script>
-        // get data
-        const rawdata = JSON.parse((localStorage.getItem("rawdata"))); // doi lai no thanh array
-        console.log(rawdata);
-
-        let table = document.getElementById("table");
-
-        const name = [];
-        const username = [];
-        const email = [];
-        const address = [];
-        const phone = [];
-        const website = [];
-        const company = [];
-        rawdata.forEach(User => { // user la object
-            //Object.values(User) la 1 mang co 10 phan tu. la cac value cua object
-            name.push(Object.values(User)[1]+"\n\n");
-            username.push(Object.values(User)[2]+"\n\n");
-            email.push(Object.values(User)[3]+"\n\n");
-            address.push(Object.values(User)[4]+"\n\n");
-            phone.push(Object.values(User)[5]+"\n\n");
-            website.push(Object.values(User)[6]+"\n\n");
-            company.push(Object.values(User)[7]+"\n\n");
-
-
-        });
-        const row = document.createElement("tr");
-        let list_name = document.createElement("td");
-        list_name.innerText = name;
-        row.appendChild(list_name);
-
-        let list_username = document.createElement("td");
-        list_username.innerText = username;
-        row.appendChild(list_username);
-        
-        let list_email = document.createElement("td");
-        list_email.innerText = email;
-        row.appendChild(list_email);
-        
-        let list_address = document.createElement("td");
-        list_address.innerText = address;
-        row.appendChild(list_address);
-        
-        let list_phone = document.createElement("td");
-        list_phone.innerText = phone;
-        row.appendChild(list_phone);
-       
-        let list_website = document.createElement("td");
-        list_website.innerText = website;
-        row.appendChild(list_website);
-        
-        let list_company = document.createElement("td");
-        list_company.innerText = company;
-        row.appendChild(list_company);
-
-        table.appendChild(row);
-
-        console.log((Object.values(rawdata[0].address))[0])
-
+        const userlist = JSON.parse(localStorage.getItem("userlist"));
+        const miniuserlist = userlist.splice(0,(userlist.length-1));
+        console.log("miniuserlist");
+        const input = document.getElementById("name");
+        const result = document.getElementById("result");
+        function searchname() {
+            let value = input.value;
+            userlist.find(record => {
+                if (record === value) {
+                    result.innerHTML=value;}
+                
+            });
+            return false;
+        }
     </script>
-
-    <style>
-        .body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        #info {
-            text-align: center;
-        }
-    </style>
 </body>
 
 </html>

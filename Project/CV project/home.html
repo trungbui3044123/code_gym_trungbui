@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="getdata.js">
+         // search id, title, price.
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Product list</h1>
+        <div class="searchzon">
+            <form action="" name="fsearch">
+                <div class="flexitem">
+                <label for="fid">id</label><br>
+                <input type="text" name="idProduct" id="idProduct">
+                </div>
+                <div class="flexitem">
+                <label for="ftitle">title</label><br>
+                <input type="text" name="titlePro" id="titlePro">
+                </div>
+                <div class="flexitem">
+                <label for="fprice">From Price</label><br>
+                <input type="text" name="fromPrice" id="fromPrice">
+                </div>
+                <div class="flexitem">
+                <label for="fprice">To Price</label><br>
+                <input type="text" name="toPrice" id="toPrice">
+                </div>
+                <div class="flexitem" id="searchdiv">
+                    <input type="submit" value="search" onclick="return search()" >
+                </div>
+            </div>
+            </form>
+        </div>
+    </header>
+    <article class="body">
+        <section>
+            <div>
+            <p id="key"></p>
+            <table id="product">
+                <tr>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>price</th>
+                    <th>description</th>
+                    <th>category</th>
+                    <th>image</th>
+                    <th>rating</th>
+                </tr>
+            </table>
+            </div>
+            <div>
+                <p>filter table </p>
+                <table id="table2">
+
+                </table>
+            </div>
+        </section>
+
+    </article>
+    <script src="search.js"> </script>
+</body>
+
+</html>
