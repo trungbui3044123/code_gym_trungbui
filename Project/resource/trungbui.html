@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="list-container">
+            <h2>Todo list</h2>
+            <div id="list-zone">
+                <div class="empty-state" id="empty-state">
+                    <h3>No data found</h3>
+                    <p>Not users yet</p>
+                </div>
+            <table class="table" id="proTable" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>todo</th>
+                        <th>status</th>
+                        <th>user</th>
+
+
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+               
+            </table>
+            <p id="pagination-zone"> </p>
+        </div>
+
+
+
+
+
+
+
+    <script src="/projecttest/DB/todoDB.js"> </script>
+    <script>
+    const url = "https://dummyjson.com/todos";
+    const localStorageKey = "todoList";
+    const aa = new TodoArray(url,localStorageKey)
+        const newTodo= new TodoObject(
+        111,
+        "Write a t in your life",
+        5,
+        "true",
+        "trungbui"
+    )
+
+    setTimeout(() => {
+    aa.addTodo(newTodo);
+    aa.paginateList();
+
+
+    function renderTbody() {
+        const listZone = document.getElementById("list-zone");
+        const table = document.getElementById("proTable");
+        const tbody = document.getElementById("tbody");
+
+        const list = aa.initArray;
+
+        // Ẩn empty state nếu có dữ liệu
+        const emptyState = document.getElementById("empty-state");
+        if (list.length === 0) {
+            table.style.display = "none";
+            emptyState.style.display = "block";
+        } else {
+            emptyState.style.display = "none";
+            table.style.display = "table";
+        }
+
+        tbody.innerHTML = ""; // Clear nội dung cũ
+
+        list.forEach((record) => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td>${record.id}</td>
+                <td>${record.todo}</td>
+                <td>${record.completed ? "✔️" : "❌"}</td>
+                <td>${record.userId}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+    };
+      renderTbody();
+},1000)
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products Managements</title>
+    <link rel="stylesheet" href="/css.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <section>
+      <div class="results-info">
+        <div class="">
+          <p>Search posts</p>
+          <input type="search" id="searchKey" />
+        </div>
+        <span id="resultsCount">Showing 0 of 0 posts</span>
+      </div>
+      <div class="tableZone">
+        <h3>ProductLists</h3>
+        <table style="display: table" id="maintable">
+          <thead>
+            <tr>
+              <th>title</th>
+              <th>images</th>
+              <th>price</th>
+              <th colspan="2">action</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+        <p id="pagina" style="display: none"></p>
+      </div>
+      <div id="Nodata" style="display: none">
+        <p>No data founded</p>
+      </div>
+      <div>
+        <p id="test">sssss</p>
+        <input type="text" id="input" />
+        <button id="test" onclick="testfunction(event)">Test</button>
+      </div>
+    </section>
+    <section>
+      <script src="DB.js"></script>
+      <script>
+        
+        const bankaccount = new BankAccount(900, "trung");
+           bankaccount.depopsit(800);
+           bankaccount.withdraw(9000);
+           bankaccount.getBalance();
+
+        const product1 = new Product("hoa",400)
+        const product2 = new Product("qua",800)
+        const product3 = new Product("maytinh",1800)
+        const product4 = new Product("den",80)
+        const product5 = new Product("but",10)
+        const cart1= new Cart();
+        cart1.addProduct(product1)
+        cart1.addProduct(product2)
+        cart1.addProduct(product3)
+        cart1.addProduct(product4)
+        cart1.addProduct(product5)
+
+        cart1.getTotal()
+        
+
+      </script>
+    </section>
+  </body>
+</html>

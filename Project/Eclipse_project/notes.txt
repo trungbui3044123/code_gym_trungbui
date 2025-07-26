@@ -1,0 +1,3 @@
+- Giá sách mua vao:500. Title Sách: JAVA. Ngày mua:2025/07/10. Status:Waiting
+- Giá sách mua vao:220. Title Sách: 勉強法. Ngày mua:2025/07/10. Status:Waiting
+- Giá sách mua vao:80. Title Sách: 勉強の手帳. Ngày mua:2025/07/13. Status:Waiting
