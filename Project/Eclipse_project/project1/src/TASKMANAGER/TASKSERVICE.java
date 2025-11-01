@@ -1,20 +1,19 @@
 package TASKMANAGER;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TASKSERVICE {
     private ArrayList<TASK> listTask;
     private  String listName;
-    private  final  String fileName="C:\\Users\\VMO\\OneDrive\\Desktop\\testjavafile\\TASKManager\\TASKMANAGER.txt"; 
+
+
 // CONSTRUCTOR
     public TASKSERVICE(String listName) {
         this.listName = listName;
         this.listTask=new ArrayList<>(); 
-        this.fileCreate(this.listTask);
+
+
     }
 // getter      
     public ArrayList<TASK> getListTask() {return this.listTask;
@@ -30,31 +29,13 @@ public class TASKSERVICE {
         }
         return -1; // KHONG TON TAI THEM MOI DUOC. KHONG EDIT, DELETE DC
     }
-// fileCreate
-    private  void fileCreate(ArrayList<TASK> nlistTask){
-
-        try {
-            File newFile= new File(fileName);
-            if(newFile.createNewFile()){
-                try(FileWriter content= new FileWriter(fileName, false)){
-                    content.write("Task manager: "+ this.getListName()+"\n");
-                    for (TASK task : nlistTask) {
-                        content.write("- "+task.toString()+"\n");
-                    }
-
-                    content.close();
-                }
-            }
-        } catch (IOException e) { System.err.println("Ghi file thất bại: " + e.getMessage());
-        }
-    }
-// FileHanderler  
-
     // addTask
-    public void addTask(TASK task){
-        if(this.validateTask(task)==-1){
-            this.listTask.add(task);
-             System.out.println("Task has been added successfully");
+    public void addTask(TASK newtask){
+        if(this.validateTask(newtask)==-1){
+            newtask.setStatus("TODO");
+            this.listTask.add(newtask);
+            
+             System.out.println(newtask.getTitle()+" .Has been added successfully");
         }else{
             System.out.println("Task has already in the list");
         }
@@ -65,6 +46,7 @@ public class TASKSERVICE {
         int index= this.validateTask(task);
         if(index>-1){
             this.listTask.get(index).setTitle(ntitle);
+           
             System.out.println("Task "+task.getId() +" has been update title"); 
         }else{
             System.out.println("Task not in the list.Can not edit"); 
@@ -95,12 +77,12 @@ public class TASKSERVICE {
         }
         ArrayList<TASK> copy = new ArrayList<>();
         copy.addAll(this.listTask);
-        this.fileCreate(copy);
+
     }
 
     public void showTask(String status){
         for (TASK task : this.listTask) {
-            boolean isExist= task.getStatus().endsWith(status);
+            boolean isExist= task.getStatus().contains(status);
             if(isExist){
                 System.err.println(task);
             }else{System.err.println("Dont have this status");

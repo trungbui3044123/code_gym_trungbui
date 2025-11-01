@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Types Management</title>
+    <link rel="stylesheet" href="/notes/layout/layout.css" />
+    <script src="/notes/layout/layout.js"></script>
+    <link rel="stylesheet" href="/notes/css/notetypes.css">
+</head>
+<body>
+   <header></header> 
+   <main>
+    <h1>List note Type</h1>
+    <section class="content">
+        <div class="tableContent">
+            <table class="typeTable">
+                <thead>
+                    <tr>
+                        <th>Type ID</th>
+                        <th>Type Name</th>
+                        <th>Type Descript</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="tableBody">
+                    
+                </tbody>
+            </table>
+        </div>
+        <div class="leftContent">
+            <form class="createType">
+                <div>
+                    <input type="text" placeholder="New Type Name" name="typeName" class="typeName" required>
+                </div>
+                <div>
+                    <textarea name="TypeDes" class="TypeDes" placeholder="Type Description"></textarea>
+                </div>
+                <div>
+                    <input type="submit" value="Add Type">
+                </div>
+            </form>
+            <h3 class="addFailsDiv"></h3>
+        </div>
+    </section>
+
+   </main>
+   <footer></footer>
+
+   <script src="/notes/js/notetypes.js"></script>
+</body>
+</html>

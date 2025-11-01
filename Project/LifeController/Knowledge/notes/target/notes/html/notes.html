@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Notes</title>
+    <link rel="stylesheet" href="/notes/layout/layout.css" />
+    <script src="/notes/layout/layout.js"></script>
+
+    <link rel="stylesheet" href="/notes/css/notes.css" />
+
+</head>
+<body>
+    <header></header> 
+   <main>
+    <h1>Create new Note</h1>
+    <section>
+        <div class="right-content">
+            <form action="" id="noteForm" onsubmit="submitForm(event)">
+                <div class="titleDiv">
+                    <input type="text" placeholder="Note title" name="title" required>
+                </div>
+                <div class="contentDiv">
+                    <label for="content">Input Note Content</label>
+                   <textarea name="content" id="content" required></textarea>
+                </div>
+            </form>
+        </div>
+        <div class="left-content">
+            <div class="leftForm">
+                <div>
+                    <label for="noteType">Select Note Type</label>
+                    <select name="noteType" id="noteType" form="noteForm" required>
+
+                </div>
+                <div class="createdDiv">
+                    <label for="created">Select created date</label>
+                    <input type="date" name="created" form="noteForm" required>
+                </div>
+                <div class="submitBtnDiv">
+                    <input type="submit" value="Submit" class="submitBtn" form="noteForm" >
+                </div>
+            </div>
+            <div class="CalculatorDiv">
+                            <h3>Calculator</h3>
+            <input type="text" class="display" disabled>
+            <div class="buttons">
+              <button onclick="clearDisplay()">Clear</button>
+              <button onclick="appendValue('/')">/</button>
+              <button onclick="appendValue('*')">*</button>
+              <button onclick="deleteLast()">Delete</button>
+              <button onclick="appendValue('7')">7</button>
+              <button onclick="appendValue('8')">8</button>
+              <button onclick="appendValue('9')">9</button>
+              <button onclick="appendValue('-')">-</button>
+              <button onclick="appendValue('4')">4</button>
+              <button onclick="appendValue('5')">5</button>
+              <button onclick="appendValue('6')">6</button>
+              <button onclick="appendValue('+')">+</button>
+              <button onclick="appendValue('1')">1</button>
+              <button onclick="appendValue('2')">2</button>
+              <button onclick="appendValue('3')">3</button>
+              <button onclick="calculate()">=</button>
+              <button onclick="appendValue('0')">0</button>
+              <button onclick="appendValue('.')">.</button>
+            </div>
+            </div>
+        </div>
+    </section>
+   </main>
+   <footer></footer>
+
+   <script src="/notes/js/notes.js" defer></script>  
+</body>
+</html>

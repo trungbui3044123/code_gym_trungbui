@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes Home Page</title>
+
+    <link rel="stylesheet" href="/notes/layout/layout.css" />
+    <link rel="stylesheet" href="/notes/css/home.css" />
+    <script src="/notes/layout/layout.js"></script>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <form id="searchContent" onsubmit="searchNote(event)">
+        <div class="titleSearch">
+          <input type="text" placeholder="Search by Title" name="searchTitle" />
+        </div>
+        <div class="noteTypeSearch">
+          <select name="searchNoteType" class="searchNoteType">
+          </select>
+        </div>
+        <div class="noteDateSearch">
+          <input type="date" name="searchNoteDate" class="searchNoteDate">
+        </div>
+        <div class="searchBtn">
+          <input type="submit" value="Search Notes" />
+        </div>
+      </form>
+      <section class="content">
+        <h1>List notes</h1>
+        <table class="noteTable">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Title</th>
+              <th>Note Type</th>
+              <th>Note created</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody class="noteTableBody">
+           
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="/notes/js/home.js" defer></script>
+  </body>
+</html>

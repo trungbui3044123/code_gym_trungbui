@@ -1,0 +1,94 @@
+
+#searchContent{
+  display: grid;
+  grid-template-columns: 40% 20% 15% 13%;
+  width: 100%;
+  padding: 10px;
+  align-items: center;
+  gap: 10px;
+}
+
+#searchContent > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+input[type="text"],
+select,
+input[type="date"],
+input[type="submit"] {
+  width: 100%;
+  font-size: 18px;
+  height: 40px;
+  border: 2px solid #d0bdf4;
+  border-radius: 5px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+
+input[type="submit"]:hover {
+  background-color: #8458B3;
+  color: #fff;
+  font-weight: 600;
+  transform: translateY(-2px);
+}
+
+
+
+
+/* content table */
+/* ======= Bảng tổng thể ======= */
+.noteTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #e5eaf5; /* Màu chủ đạo */
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 0 10px rgba(132, 88, 179, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+/* ======= Tiêu đề bảng ======= */
+.noteTable thead {
+  background-color: #d0bdf4; /* Màu phụ */
+  color: #333;
+}
+
+.noteTable th {
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: bold;
+  border-bottom: 2px solid #a0d2eb; /* Màu phụ */
+}
+
+/* ======= Dòng dữ liệu ======= */
+.noteTable td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #a0d2eb;
+  color: #333;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+/* ======= Hiệu ứng hover ======= */
+.noteTable tbody tr:hover {
+  background-color: #f0f4fc; /* gần với màu chủ đạo */
+}
+
+/* ======= Nút Details ======= */
+.noteTable button {
+  background-color: #8458B3; /* Màu nhấn */
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: background-color 0.3s ease;
+}
+
+.noteTable button:hover {
+  background-color: #a28089; /* Màu nhấn tinh tế */
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Details</title>
+    <link rel="stylesheet" href="/notes/layout/layout.css" />
+    <link rel="stylesheet" href="/notes/css/noteDetails.css" />
+    <script src="/notes/layout/layout.js"></script>    
+</head>
+<body>
+    <header></header>
+    <main>
+        <h1>Details Note </h1>
+        <section>
+        <div class="right-content">
+            <form id="noteForm" onsubmit="submitForm(event)">
+                <input type="hidden" >
+                <div class="titleDiv">
+                    <input type="text" placeholder="Note title" name="title" readonly>
+                </div>
+                <div class="contentDiv">
+                    <label for="content">Input Note Content</label>
+                   <textarea name="content" id="content" readonly></textarea>
+                </div>
+            </form>
+        </div>
+        <div class="left-content">
+            <div class="leftForm">
+                <div>
+                    <label for="noteType">Select Note Type</label>
+                    <select name="noteType" id="noteType" form="noteForm" required>
+                    </select>    
+                </div>
+                <div class="createdDiv">
+                    <label for="created">Select created date</label>
+                    <input type="date" name="created" form="noteForm" readonly>
+                    
+                </div>
+                <div class="submitBtnDiv">
+                    <input type="submit" value="Edit" class="submitBtn" form="noteForm" onclick="editNote(event)">
+                    <button onclick="deleteNote(event)">Delete</button>
+                </div>
+            </div>
+            <div class="EditFails"></div>
+        </div>
+        </section>
+    </main>
+    <footer></footer>
+    <script src="/notes/js/noteDetails.js" defer></script>
+</body>
+</html>
